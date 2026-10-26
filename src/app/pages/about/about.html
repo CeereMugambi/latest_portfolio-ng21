@@ -1,0 +1,83 @@
+<section class="about">
+  <div class="head">
+    <h2>About <span>me</span></h2>
+    <span class="bar-title"></span>
+  </div>
+
+  <div class="intro glass">
+    <div class="photo">
+      <img src="images/profile.jpg" alt="Janet Ceere Mugambi" />
+    </div>
+    <div class="text">
+      <h3>Hi, I'm Ceere ✦</h3>
+      <p>
+        I'm a full-stack developer who has been building production software
+        for Equity Bank Holdings since 2021, from customer-facing interfaces to
+        API integrations and secure, multi-subsidiary banking features. I'm
+        completing a Master's in Financial Engineering and I'm passionate about
+        AI and agentic coding.
+      </p>
+    </div>
+  </div>
+
+  <h3 class="sub">Skills</h3>
+  <div class="skills">
+    @for (g of skillGroups; track g.title) {
+      <div class="skill-card glass">
+        <h4>{{ g.title }}</h4>
+        <div class="chips">
+          @for (s of g.items; track s) {
+            <span class="chip">{{ s }}</span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+
+  <h3 class="sub">Experience</h3>
+  <div class="timeline">
+    @for (e of experience; track e.role + e.period) {
+      <div class="item glass">
+        <span class="dot"></span>
+        <div class="top">
+          <h4>{{ e.role }}</h4>
+          <span class="period">{{ e.period }}</span>
+        </div>
+        <p class="company">{{ e.company }}</p>
+        <ul>
+          @for (p of e.points; track p) {
+            <li>{{ p }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3 class="sub">Education</h3>
+      @for (ed of education; track ed.title) {
+        <div class="mini glass">
+          <h4>{{ ed.title }}</h4>
+          <p>{{ ed.detail }}</p>
+        </div>
+      }
+    </div>
+    <div>
+      <h3 class="sub">Achievements</h3>
+      @for (a of achievements; track a.title) {
+        <div class="mini glass">
+          <h4>🏆 {{ a.title }}</h4>
+          <p>{{ a.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+
+  <h3 class="sub">Certifications</h3>
+  <div class="chips certs">
+    @for (c of certifications; track c) {
+      <span class="chip">{{ c }}</span>
+    }
+  </div>
+</section>

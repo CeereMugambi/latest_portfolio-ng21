@@ -1,0 +1,62 @@
+<section class="hero">
+  <div class="spotlight"></div>
+  <div class="grid-floor"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="content">
+    <div class="left">
+      <span class="status"><i></i> Nairobi · Full-Stack Developer</span>
+
+      <h1>
+        Hi, I'm
+        <span class="name" data-text="Ceere">Ceere</span>
+      </h1>
+
+      <p class="role">&gt; <span #typed></span></p>
+
+      <p class="bio">
+        I build fast, secure and beautiful products end to end, from
+        pixel-perfect interfaces to API integrations, with a love for AI and
+        agentic coding.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" routerLink="/projects">View my work</a>
+        <a class="btn ghost" routerLink="/contact">Let's talk</a>
+      </div>
+
+      <div class="stats">
+        @for (s of stats; track s.label) {
+          <div class="stat glass">
+            <strong>{{ s.value }}</strong>
+            <span>{{ s.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="terminal glass">
+        <div class="bar">
+          <i></i><i></i><i></i>
+          <span>ceere.ts</span>
+        </div>
+        <pre><code><span class="k">const</span> <span class="v">ceere</span> = &#123;
+  <span class="p">role</span>: <span class="s">'Full-Stack Developer'</span>,
+  <span class="p">stack</span>: [<span class="s">'Angular'</span>, <span class="s">'React'</span>, <span class="s">'TypeScript'</span>],
+  <span class="p">studying</span>: <span class="s">'Financial Engineering'</span>,
+  <span class="p">learning</span>: <span class="s">'Agentic AI'</span>,
+  <span class="p">coffee</span>: <span class="k">true</span>,
+&#125;;</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="track">
+      @for (t of tech; track $index) { <span>✦ {{ t }}</span> }
+      @for (t of tech; track $index) { <span>✦ {{ t }}</span> }
+    </div>
+  </div>
+</section>
