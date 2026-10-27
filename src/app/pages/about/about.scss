@@ -1,3 +1,4 @@
+:host { display: block; }
 .about {
   max-width: 1000px;
   margin: 0 auto;
@@ -40,7 +41,7 @@
   padding: 8px;
   border-radius: 32px;
   background: linear-gradient(135deg, var(--mauve), var(--pink), var(--lilac));
-  box-shadow: 0 16px 50px rgba(255, 158, 216, 0.4);
+  box-shadow: 0 16px 50px rgba(232, 210, 196, 0.4);
   transform: rotate(-3deg);
   transition: transform 0.4s;
   &:hover { transform: rotate(0) scale(1.03); }
@@ -64,9 +65,9 @@
   padding: 0.35rem 0.9rem;
   font-size: 0.8rem;
   border-radius: 999px;
-  color: #ffd6f0;
+  color: #e8d2c4;
   border: 1px solid var(--glass-border);
-  background: rgba(255, 158, 216, 0.12);
+  background: rgba(232, 210, 196, 0.12);
 }
 
 .skills {

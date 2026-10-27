@@ -1,0 +1,71 @@
+<section class="projects">
+  <div appFlip>
+    <div class="head">
+      <h2>My <span>projects</span></h2>
+      <span class="bar-title"></span>
+    </div>
+  </div>
+
+  <div class="grid">
+    @for (p of projects; track p.id; let i = $index) {
+      <div appFlip>
+        <article class="card glass" [class.about-open]="aboutOpen() === p.id">
+          <header class="chrome">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="url"><b></b>{{ host(p.url) }}</span>
+            <span class="num">{{ pad(i + 1) }}</span>
+          </header>
+
+          <div class="viewer">
+            <div
+              class="strip"
+              #strip
+              (scroll)="onScroll(p.id, strip)"
+              (pointerdown)="down($event, strip)"
+              (pointermove)="move($event, strip)"
+              (pointerup)="up(strip)"
+              (pointercancel)="up(strip)"
+            >
+              @for (img of p.images; track img.src) {
+                <figure>
+                  <img [src]="img.src" [alt]="p.name + ' - ' + img.title" draggable="false" loading="lazy" />
+                  <figcaption>{{ img.title }}</figcaption>
+                </figure>
+              }
+            </div>
+
+            <span class="scan"></span>
+
+            @if (p.images.length > 1) {
+              <button class="arrow prev" (click)="step(strip, -1)" aria-label="Previous screenshot">‹</button>
+              <button class="arrow next" (click)="step(strip, 1)" aria-label="Next screenshot">›</button>
+              <span class="counter">{{ pad(idx(p.id) + 1) }} / {{ pad(p.images.length) }}</span>
+              <span class="swipe">⇆ swipe</span>
+              <span class="bar"><i [style.width.%]="((idx(p.id) + 1) / p.images.length) * 100"></i></span>
+            }
+
+            <div class="about-panel" [attr.aria-hidden]="aboutOpen() !== p.id">
+              <div class="mono">// about {{ p.name }}</div>
+              <p>{{ p.detail }}</p>
+              <button class="close" (click)="toggleAbout(p.id)">Close ✕</button>
+            </div>
+          </div>
+
+          <div class="body">
+            <h3>{{ p.name }}</h3>
+            <div class="tags">
+              @for (t of techs(p.technologies); track t) {
+                <span>{{ t }}</span>
+              }
+            </div>
+            <div class="actions">
+              <a class="btn primary" [href]="p.url" target="_blank" rel="noopener">View project ↗</a>
+              <button class="btn ghost" (click)="toggleAbout(p.id)">About</button>
+              <a class="btn ghost" [href]="p.codeSourceUrl" target="_blank" rel="noopener">&lt;/&gt; Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    }
+  </div>
+</section>

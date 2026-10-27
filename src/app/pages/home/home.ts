@@ -1,10 +1,9 @@
 import { Component, ElementRef, HostListener, OnDestroy, AfterViewInit, ViewChild, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import Typed from 'typed.js';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

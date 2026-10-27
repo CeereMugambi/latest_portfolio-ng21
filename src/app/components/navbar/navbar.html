@@ -1,20 +1,22 @@
 <header class="nav-wrap">
   <nav class="nav glass" [class.scrolled]="scrolled()">
-    <a class="logo" routerLink="/"><span class="spark">✦</span> Ceere</a>
+    <a class="logo" href="#home" (click)="$event.preventDefault(); go('home')">
+      <span class="spark">✦</span> Ceere
+    </a>
+
     <ul class="links" [class.open]="open()">
-      @for (l of links; track l.path) {
+      @for (l of links; track l.id) {
         <li>
           <a
-            [routerLink]="l.path"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="open.set(false)"
+            [href]="'#' + l.id"
+            [class.active]="active() === l.id"
+            (click)="$event.preventDefault(); go(l.id)"
           >{{ l.label }}</a>
         </li>
       }
     </ul>
 
-    <<button class="burger" [class.open]="open()" (click)="open.set(!open())" aria-label="Menu">
+    <button class="burger" [class.open]="open()" (click)="open.set(!open())" aria-label="Menu">
       <span></span><span></span>
     </button>
   </nav>

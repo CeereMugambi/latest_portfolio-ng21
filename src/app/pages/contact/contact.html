@@ -1,0 +1,47 @@
+<section class="contact">
+  <div appFlip>
+    <div class="head">
+      <h2>Let's <span>connect</span></h2>
+      <span class="bar-title"></span>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div appFlip>
+      <div class="info">
+        <p class="lead">
+          Have a project, an opportunity or just want to say hi? My inbox is open.
+        </p>
+        @for (c of channels; track c.label) {
+          <a class="channel glass" [href]="c.href" target="_blank" rel="noopener">
+            <span class="ic">{{ c.icon }}</span>
+            <span>
+              <small>{{ c.label }}</small>
+              <strong>{{ c.value }}</strong>
+            </span>
+          </a>
+        }
+      </div>
+    </div>
+
+    <div appFlip>
+      <form class="form glass" (submit)="send($event, nameInput.value, emailInput.value, msgInput.value)">
+        <label>
+          Name
+          <input #nameInput type="text" required placeholder="Your name" />
+        </label>
+        <label>
+          Email
+          <input #emailInput type="email" required placeholder="you@example.com" />
+        </label>
+        <label>
+          Message
+          <textarea #msgInput rows="5" required placeholder="Tell me about your idea..."></textarea>
+        </label>
+        <button type="submit" class="send">Send message ✦</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="foot">© {{ year }} Janet Ceere Mugambi · Built with Angular & lots of ✦</footer>
+</section>

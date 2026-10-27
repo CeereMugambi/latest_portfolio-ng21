@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Flip } from '../../directives/flip';
 
 @Component({
   selector: 'app-about',
+  imports: [Flip],
   templateUrl: './about.html',
   styleUrl: './about.scss',
 })
