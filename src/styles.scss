@@ -1,38 +1,34 @@
 :root {
-  --bg: #17151c;
-  --mauve: #c7a9a3;
+  --bg: #f7efe7;
+  --mauve: #8c5a6b;       
   --orchid: #9e8189;
-  --pink: #e8d2c4;
-  --lilac: #aaa2b3;
-  --text: #f7efe7;
-  --text-dim: #aaa2b3;
-  --glass-border: rgba(247, 239, 231, 0.2);
+  --pink: #5a3f4b;        /* headings, numbers */
+  --lilac: #7b7188;
+  --text: #3e3239;
+  --text-dim: #5c4650;    /* body and secondary text, darker */
+  --glass-border: rgba(107, 85, 96, 0.28);
 }
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-html, body { min-height: 100%; }
 
 body {
   margin: 0;
-  font-family: 'Poppins', system-ui, sans-serif;
+  font-family: 'Poppins', Roboto, 'Helvetica Neue', sans-serif;
   color: var(--text);
   background: var(--bg);
 }
 
-/* galaxy glow */
+/* soft blush glow */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(60% 50% at 15% 10%, rgba(158, 129, 137, 0.38), transparent 60%),
-    radial-gradient(50% 45% at 85% 20%, rgba(232, 210, 196, 0.28), transparent 60%),
-    radial-gradient(60% 50% at 50% 105%, rgba(113, 104, 121, 0.4), transparent 60%);
+    radial-gradient(60% 50% at 15% 10%, rgba(158, 129, 137, 0.95), transparent 60%),
+    radial-gradient(50% 45% at 85% 20%, rgba(199, 169, 163, 0.5), transparent 60%),
+    radial-gradient(60% 50% at 50% 105%, rgba(170, 162, 179, 0.45), transparent 60%);
 }
 
-/* twinkling stars */
+/* sparkle dots */
 body::after {
   content: '';
   position: fixed;
@@ -40,29 +36,24 @@ body::after {
   z-index: -1;
   pointer-events: none;
   background-image:
-    radial-gradient(1.5px 1.5px at 20px 30px, #fff, transparent),
-    radial-gradient(1px 1px at 90px 120px, #e8d2c4, transparent),
-    radial-gradient(1.5px 1.5px at 160px 60px, #e2dde7, transparent),
-    radial-gradient(1px 1px at 130px 170px, #fff, transparent);
+    radial-gradient(1.5px 1.5px at 20px 30px, #c7a9a3, transparent),
+    radial-gradient(1px 1px at 90px 120px, #9e8189, transparent),
+    radial-gradient(1.5px 1.5px at 160px 60px, #c7a9a3, transparent),
+    radial-gradient(1px 1px at 130px 170px, #aaa2b3, transparent);
   background-size: 200px 200px;
-  opacity: 0.55;
+  opacity: 0.5;
   animation: twinkle 5s ease-in-out infinite alternate;
 }
 
-@keyframes twinkle {
-  from { opacity: 0.25; }
-  to { opacity: 0.7; }
-}
-
 .glass {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+  background: linear-gradient(135deg, rgba(107, 85, 96, 0.78), rgba(107, 85, 96, 0.38));
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(22px) saturate(180%);
-  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
   border-radius: 26px;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.35),
-    0 20px 60px rgba(158, 129, 137, 0.35);
+    inset 0 1px 0 #fff,
+    0 20px 50px rgba(158, 129, 137, 0.28);
 }
 
 .bar-title {
@@ -94,4 +85,13 @@ h2 { color: var(--text); }
 
 @media (prefers-reduced-motion: reduce) {
   .flip > * { transform: none; opacity: 1; transition: none; }
+}
+
+.chip,
+.tags span,
+.stat span,
+.mini p,
+.counter,
+figcaption {
+  font-weight: 500;
 }

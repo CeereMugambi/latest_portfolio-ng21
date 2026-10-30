@@ -1,5 +1,23 @@
 export const projects = [
   {
+    id: 'Professional Portfolio Light Theme',
+    name: 'Portfolio',
+    technologies: 'Javascript, Typescript, HTML, CSS, SASS, Angular21',
+    images: [
+      { title: 'Home', src: 'images/light-home.png' },
+      { title: 'About', src: 'images/light-about.png' },
+      { title: 'Experience', src: 'images/light-experience.png' },
+      { title: 'Education', src: 'images/light-education.png' },
+      { title: 'Projects', src: 'images/light-projects.png' },
+      { title: 'Contact', src: 'images/light-contact.png' },
+    
+    ],
+    url: 'https://myportfolio-git-feature-light-theme-janet-mugambis-projects.vercel.app/',
+    detail:
+      "A one-page developer portfolio built with **Angular 21**, **TypeScript** and **SCSS**. It features a responsive design, smooth animations, and showcases my skills, projects, and professional experience. The portfolio is optimized for performance and accessibility, providing a seamless user experience across devices.",
+    codeSourceUrl: 'https://github.com/CeereMugambi/latest_portfolio-ng21',
+  },
+  {
     id: 'Professional Portfolio',
     name: 'Portfolio',
     technologies: 'Javascript, Typescript, HTML, CSS, SASS, Angular21',
