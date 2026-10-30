@@ -88,7 +88,7 @@
     resize: vertical;
     transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
 
-    &::placeholder { color: rgba(170, 162, 179, 0.6); }
+   &::placeholder { color: rgba(90, 63, 75, 0.6); }
     &:focus {
       border-color: var(--mauve);
       background: rgba(107, 85, 96, 0.1);

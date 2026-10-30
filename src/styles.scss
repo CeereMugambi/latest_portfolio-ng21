@@ -1,12 +1,12 @@
 :root {
   --bg: #f7efe7;
-  --mauve: #9e8189;
+  --mauve: #8c5a6b;       
   --orchid: #9e8189;
-  --pink: #6b5560;
-  --lilac: #aaa2b3;
+  --pink: #5a3f4b;        /* headings, numbers */
+  --lilac: #7b7188;
   --text: #3e3239;
-  --text-dim: #6b5560;
-  --glass-border: rgba(107, 85, 96, 0.22);
+  --text-dim: #5c4650;    /* body and secondary text, darker */
+  --glass-border: rgba(107, 85, 96, 0.28);
 }
 
 body {
@@ -85,4 +85,13 @@ h2 { color: var(--text); }
 
 @media (prefers-reduced-motion: reduce) {
   .flip > * { transform: none; opacity: 1; transition: none; }
+}
+
+.chip,
+.tags span,
+.stat span,
+.mini p,
+.counter,
+figcaption {
+  font-weight: 500;
 }

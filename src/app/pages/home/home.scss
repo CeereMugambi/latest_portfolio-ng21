@@ -195,14 +195,11 @@ h1 {
 
 /* terminal card */
 .terminal {
-  position: relative;
-  padding: 0;
-  overflow: hidden;
-  animation: bob 6s ease-in-out infinite;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 253, 250, 0.35),
-    0 0 0 1px rgba(158, 129, 137, 0.25),
-    0 20px 70px rgba(158, 129, 137, 0.4);
+  background: #292531;
+  border-color: rgba(247, 239, 231, 0.2);
+  .bar span { color: #aaa2b3; }
+  pre { color: #f7efe7; }
+
 
   .bar {
     display: flex;
