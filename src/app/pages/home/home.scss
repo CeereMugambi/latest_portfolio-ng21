@@ -52,7 +52,7 @@
   pointer-events: none;
   animation: float 14s ease-in-out infinite;
   &-1 { width: 380px; height: 380px; background: var(--orchid); top: 5%; left: -100px; opacity: 0.45; }
-  &-2 { width: 320px; height: 320px; background: var(--pink); bottom: 10%; right: -60px; opacity: 0.35; animation-delay: -6s; }
+  &-2 { width: 320px; height: 320px; background: var(--orb-2); bottom: 10%; right: -60px; opacity: 0.35; animation-delay: -6s; }
 }
 
 @keyframes float {
@@ -276,4 +276,11 @@ h1 {
 
 @media (prefers-reduced-motion: reduce) {
   .grid-floor, .orb, .terminal, .marquee .track, .status i { animation: none; }
+}
+
+.terminal {
+  background: #292531;
+  border-color: rgba(247, 239, 231, 0.2);
+  .bar span { color: #aaa2b3; }
+  pre { color: #f7efe7; }
 }

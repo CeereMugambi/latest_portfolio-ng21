@@ -16,6 +16,16 @@
       }
     </ul>
 
+    <button
+       class="theme-btn"
+      [class.is-light]="theme.mode() === 'light'"
+      (click)="theme.toggle()"
+      [attr.aria-label]="'Switch to ' + (theme.mode() === 'dark' ? 'light' : 'dark') + ' mode'"
+      >
+      <span class="sun">☀</span>
+      <span class="moon">☾</span>
+  </button>
+
     <button class="burger" [class.open]="open()" (click)="open.set(!open())" aria-label="Menu">
       <span></span><span></span>
     </button>
