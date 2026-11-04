@@ -1,4 +1,6 @@
-import { Component, AfterViewInit, HostListener, OnDestroy, signal } from '@angular/core';
+import { Component, AfterViewInit, HostListener, OnDestroy, signal, inject } from '@angular/core';
+import { Theme } from '../../services/theme';
+
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +11,7 @@ export class Navbar implements AfterViewInit, OnDestroy {
   open = signal(false);
   scrolled = signal(false);
   active = signal('home');
+  theme = inject(Theme);
 
   links = [
     { label: 'Home', id: 'home' },
